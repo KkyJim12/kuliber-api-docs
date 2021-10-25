@@ -368,8 +368,8 @@ https://api.kuliber.com
 ```
 
 ## Hot Products
-#### Description: Get got products by period.
-#### Method:`[Method]`
+#### Description: Get hot products by period.
+#### Method:`GET`
 ``` 
 /api/v1/hot-products
 ```
