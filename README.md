@@ -21,6 +21,7 @@ https://api.kuliber.com
 # All API Endpoints
 * [Register](#register)
 * [Login](#login)
+* [Forget Password](#forget-password)
 * [Create Company](#create-company)
 * [Image Upload](#image-upload)
 * [Analysis Summary](#analysis-summary)
@@ -93,6 +94,29 @@ https://api.kuliber.com
   ]
 }
 ```
+
+## Forget Password
+#### Description: Sending change password method to a specific email.
+#### Method:`POST`
+``` 
+/api/v1/forget-password
+```
+
+#### Middleware: 
+* None
+
+#### Query:
+| Name | Type | Validate |
+| --- | --- | --- |
+| email | *string* | `required` `email` |
+
+#### Response:
+```javascript
+{
+  "error": 0
+}
+```
+
 
 ## Create Company
 #### Description: Creating company profile after login.
