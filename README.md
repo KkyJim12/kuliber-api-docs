@@ -29,6 +29,7 @@ https://api.kuliber.com
 * [Analysis Summary](#analysis-summary)
 * [Analysis Detail](#analysis-detail)
 * [Sales History](#sales-history)
+* [Hot Products](#hot-products)
 
 # API Specs
 
@@ -361,6 +362,38 @@ https://api.kuliber.com
           "status": "complete",
         }
       ]
+    }
+  ]
+}
+```
+
+## Hot Products
+#### Description: Get got products by period.
+#### Method:`[Method]`
+``` 
+/api/v1/hot-products
+```
+
+#### Middleware: 
+* Auth
+
+#### Query:
+| Name | Type | Validate |
+| --- | --- | --- |
+| period | *string* | `none` |
+
+#### Response:
+```javascript
+{
+  "error": 0
+  "result": [
+    {
+      "name": "Iphone 13"
+      "sales": 12000000
+    },
+    {
+      "name": "Macbook Pro M1"
+      "sales": 25000000
     }
   ]
 }
