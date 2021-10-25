@@ -23,6 +23,7 @@ https://api.kuliber.com
 * [Login](#login)
 * [Forget Password](#forget-password)
 * [Change Password](#change-password)
+* [Choose Package](#choose-package)
 * [Create Company](#create-company)
 * [Image Upload](#image-upload)
 * [Analysis Summary](#analysis-summary)
@@ -119,7 +120,7 @@ https://api.kuliber.com
 ```
 ## Change Password
 #### Description: Change password from forget password
-#### Method:`POST`
+#### Method:`PUT`
 ``` 
 /api/v1/change-password
 ```
@@ -137,6 +138,35 @@ https://api.kuliber.com
 ```javascript
 {
   "error": 0
+}
+```
+
+## Choose Package
+#### Description: Choose package of platform usage and save credit/debit card information to charge monthly or anually.
+#### Method:`POST`
+``` 
+/api/v1/choose-package
+```
+
+#### Middleware: 
+* Auth
+
+#### Query:
+| Name | Type | Validate |
+| --- | --- | --- |
+| pacakgeId | *uuid* | `required` |
+| changeType | *string* | `required` |
+| cardName | *string* | `required` |
+| cardNumber | *string* | `required` `len:16` |
+| cardExpireMonth | *string* | `required` `len:2` |
+| cardExpireYear | *string* | `required` `len:2` |
+| cardCVC | *string* | `required` `len:3` |
+
+#### Response:
+```javascript
+{
+  "error": 0
+  "result": [result]
 }
 ```
 
