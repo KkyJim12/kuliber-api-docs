@@ -22,6 +22,7 @@ https://api.kuliber.com
 * [Register](#register)
 * [Login](#login)
 * [Forget Password](#forget-password)
+* [Change Password](#change-password)
 * [Create Company](#create-company)
 * [Image Upload](#image-upload)
 * [Analysis Summary](#analysis-summary)
@@ -116,7 +117,28 @@ https://api.kuliber.com
   "error": 0
 }
 ```
+## Change Password
+#### Description: Change password from forget password
+#### Method:`POST`
+``` 
+/api/v1/change-password
+```
 
+#### Middleware: 
+* None
+
+#### Query:
+| Name | Type | Validate |
+| --- | --- | --- |
+| newPassword | *string* | `required` `min:6` `max:255` |
+| confirmNewPassword | *string* | `required` `same:newPassword` |
+
+#### Response:
+```javascript
+{
+  "error": 0
+}
+```
 
 ## Create Company
 #### Description: Creating company profile after login.
